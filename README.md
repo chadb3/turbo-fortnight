@@ -61,24 +61,3 @@ it runs whatever workflow you define using **GitHub Actions**, a free CI
 This workflow also uses a **matrix** to run the same tests against Python
 3.10, 3.11, and 3.12 in parallel, so you'd notice immediately if a change
 only breaks on one version.
-
-## Trying it for real
-
-To actually see GitHub run this:
-
-1. Create a new (empty) repository on GitHub.
-2. In this project folder, run:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: math functions with tests and CI"
-   git branch -M main
-   git remote add origin <your-repo-url>
-   git push -u origin main
-   ```
-3. Open your repository on GitHub and click the **Actions** tab. You'll
-   see the "Tests" workflow running, then passing (green check).
-4. Try breaking a test on purpose — e.g. change `test_add` to expect the
-   wrong answer — commit, and push again. Watch the Actions tab show a
-   red X instead. That's the whole point: GitHub is now catching bad
-   changes for you, automatically, on every push.
