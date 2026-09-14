@@ -1,9 +1,9 @@
 # math-ci-demo
 
-[![Tests](https://github.com/chadb3/turbo-fortnight/actions/workflows/tests.yml/badge.svg)](https://github.com/chadb3/turbo-fortnight/actions/workflows/tests.yml)
+[![Test Status:](https://github.com/chadb3/turbo-fortnight/actions/workflows/tests.yml/badge.svg)](https://github.com/chadb3/turbo-fortnight/actions/workflows/tests.yml)
 
 A tiny Python project meant to demonstrate how GitHub automatically tests
-your code every time you push. There's nothing fancy here on purpose: a
+your code every time you push. Repository name was the "random" one GitHub provided.There's nothing fancy here on purpose: a
 handful of math functions, a pytest test suite for them, and a GitHub
 Actions workflow that runs that suite on every push.
 
