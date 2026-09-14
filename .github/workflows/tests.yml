@@ -1,0 +1,43 @@
+name: Tests
+
+# This is what makes GitHub automatically test the project.
+# "on: push" and "on: pull_request" mean this workflow runs every time
+# someone pushes a commit or opens/updates a pull request against main.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    # Run on a fresh Ubuntu virtual machine that GitHub provides for free.
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        # Run the whole test suite once per Python version, so you catch
+        # version-specific bugs before they reach anyone using the project.
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      # 1. Copy the repository's code onto the virtual machine.
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # 2. Install the requested version of Python.
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # 3. Install the project's dependencies (just pytest, here).
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4. Run the test suite. If any test fails, this step fails, which
+      #    marks the whole workflow run (and the commit/PR) as failing.
+      - name: Run tests with pytest
+        run: pytest -v
