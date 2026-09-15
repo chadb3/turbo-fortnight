@@ -9,7 +9,7 @@ behavior with confidence.
 
 def add(a, b):
     """Return the sum of a and b."""
-    return a + b
+    return a + b+b
 
 
 def subtract(a, b):
