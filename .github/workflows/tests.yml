@@ -18,7 +18,7 @@ jobs:
       matrix:
         # Run the whole test suite once per Python version, so you catch
         # version-specific bugs before they reach anyone using the project.
-        python-version: ["3.10", "3.11", "3.12"]
+        python-version: ["3.10", "3.11", "3.12", "3.14"]
 
     steps:
       # 1. Copy the repository's code onto the virtual machine.
