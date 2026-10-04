@@ -39,7 +39,7 @@ You should see all tests pass.
 
 ## How GitHub's automatic testing works
 
-This is the part you asked about. GitHub itself doesn't run your tests —
+GitHub itself doesn't run your tests —
 it runs whatever workflow you define using **GitHub Actions**, a free CI
 (continuous integration) system built into every GitHub repository.
 
